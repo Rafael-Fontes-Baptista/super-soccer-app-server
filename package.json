@@ -11,7 +11,6 @@
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "node .",
     "dev": "env DELAY=1000 npx nodemon .",

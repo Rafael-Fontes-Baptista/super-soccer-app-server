@@ -1,6 +1,6 @@
 {
   "development": {
-    "url": "",
+    "url": "postgres://wpkacmuw:EsMZLFRNGF-Ie1mm6HpZJeCvyguwXQeB@hattie.db.elephantsql.com/wpkacmuw",
     "dialect": "postgres",
     "operatorsAliases": "0"
   },
