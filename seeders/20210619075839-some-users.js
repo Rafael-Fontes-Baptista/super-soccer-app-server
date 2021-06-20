@@ -8,7 +8,7 @@ module.exports = {
       "users",
       [
         {
-          fullName: "testuser",
+          full_name: "testuser",
           email: "test@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -17,7 +17,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "dummy",
+          full_name: "dummy",
           email: "a@a.com",
           password: bcrypt.hashSync("a", SALT_ROUNDS),
           avatar_url:
