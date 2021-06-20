@@ -36,4 +36,28 @@ router.post("/", async (req, res, next) => {
   }
 })
 
+router.patch("/:id", async (req, res, next) => {
+  try {
+    const team = await Team.findByPk(req.params.id)
+
+    if (!team) {
+      return res.status(404).send("Team doesn't exist")
+    }
+
+    const { name, abrev, color } = req.body
+
+    if (!name || !abrev || !color) {
+      return res
+        .status(400)
+        .send({ message: "A team must have a name, abrev and color" })
+    }
+
+    await team.update({ name, abrev, color })
+
+    return res.status(200).send({ team })
+  } catch (e) {
+    next(e)
+  }
+})
+
 module.exports = router
