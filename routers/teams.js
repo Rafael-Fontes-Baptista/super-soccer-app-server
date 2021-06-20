@@ -24,13 +24,13 @@ router.post("/", async (req, res, next) => {
         .status(400)
         .send({ message: "A team must have a name, abrev and color" })
     }
-    const teamToCreate = await Team.create({
+    const newTeam = await Team.create({
       name,
       abrev,
       color,
     })
 
-    return res.status(201).send({ message: "team created", teamToCreate })
+    return res.status(201).send({ message: "team created", newTeam })
   } catch (e) {
     next(e)
   }
