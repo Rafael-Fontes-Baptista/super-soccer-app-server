@@ -15,4 +15,25 @@ router.get("/", async (req, res, next) => {
   }
 })
 
+router.post("/", async (req, res, next) => {
+  try {
+    const { name, abrev, color } = req.body
+
+    if (!name || !abrev || !color) {
+      return res
+        .status(400)
+        .send({ message: "A team must have a name, abrev and color" })
+    }
+    const team = await Team.create({
+      name,
+      abrev,
+      color,
+    })
+
+    return res.status(201).send({ message: "Team created", team })
+  } catch (e) {
+    next(e)
+  }
+})
+
 module.exports = router
