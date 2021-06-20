@@ -5,6 +5,7 @@ const { PORT } = require("./config/constants")
 const authMiddleWare = require("./auth/middleware")
 const authRouter = require("./routers/auth")
 const teamsRouter = require("./routers/teams")
+const usersRouter = require("./routers/users")
 
 const app = express()
 
@@ -23,6 +24,7 @@ if (process.env.DELAY) {
 
 app.use("/", authRouter)
 app.use("/teams", teamsRouter)
+app.use("/users", usersRouter)
 
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`)
