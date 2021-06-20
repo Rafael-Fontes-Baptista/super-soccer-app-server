@@ -24,13 +24,13 @@ router.post("/", async (req, res, next) => {
         .status(400)
         .send({ message: "A team must have a name, abrev and color" })
     }
-    const team = await Team.create({
+    const teamToCreate = await Team.create({
       name,
       abrev,
       color,
     })
 
-    return res.status(201).send({ message: "Team created", team })
+    return res.status(201).send({ message: "team created", teamToCreate })
   } catch (e) {
     next(e)
   }
@@ -38,10 +38,10 @@ router.post("/", async (req, res, next) => {
 
 router.patch("/:id", async (req, res, next) => {
   try {
-    const team = await Team.findByPk(req.params.id)
+    const teamToUpdate = await Team.findByPk(req.params.id)
 
-    if (!team) {
-      return res.status(404).send("Team doesn't exist")
+    if (!teamToUpdate) {
+      return res.status(404).send("team doesn't exist")
     }
 
     const { name, abrev, color } = req.body
@@ -52,9 +52,25 @@ router.patch("/:id", async (req, res, next) => {
         .send({ message: "A team must have a name, abrev and color" })
     }
 
-    await team.update({ name, abrev, color })
+    await teamToUpdate.update({ name, abrev, color })
 
-    return res.status(200).send({ team })
+    return res.status(200).send({ teamToUpdate })
+  } catch (e) {
+    next(e)
+  }
+})
+
+router.delete("/:id", async (req, res, next) => {
+  try {
+    const teamToDelete = await Team.findByPk(req.params.id)
+
+    if (!teamToDelete) {
+      return res.status(404).send("team doesn't exist")
+    }
+
+    await teamToDelete.destroy()
+
+    return res.status(200).send("team deleted")
   } catch (e) {
     next(e)
   }
