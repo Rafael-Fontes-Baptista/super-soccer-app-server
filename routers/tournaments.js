@@ -59,12 +59,36 @@ router.patch("/:id", async (req, res, next) => {
       }
 
       if (tournamentToUpdate.status !== "open") {
-        return res.status(404).send("this tournament is not open")
+        return res
+          .status(404)
+          .send(`status: ${tournamentToUpdate.status} - it can not be edited`)
       }
       await tournamentToUpdate.update({ name, date, time, local })
     }
 
     return res.status(200).send({ tournamentToUpdate })
+  } catch (e) {
+    next(e)
+  }
+})
+
+router.delete("/:id", async (req, res, next) => {
+  try {
+    const tournamentToDelete = await Tournament.findByPk(req.params.id)
+
+    if (!tournamentToDelete) {
+      return res.status(404).send("tournament doesn't exist")
+    }
+
+    if (tournamentToDelete.status !== "open") {
+      return res
+        .status(404)
+        .send(`status: ${tournamentToDelete.status} - it can not be deleted`)
+    }
+
+    await tournamentToDelete.destroy()
+
+    return res.status(200).send("tournament deleted")
   } catch (e) {
     next(e)
   }
