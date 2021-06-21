@@ -1,4 +1,5 @@
 const { Router } = require("express")
+const isAdminMiddleware = require("../auth/isAdmin")
 const Tournament = require("../models").tournament
 
 const router = new Router()
@@ -15,7 +16,7 @@ router.get("/", async (req, res, next) => {
   }
 })
 
-router.post("/", async (req, res, next) => {
+router.post("/", isAdminMiddleware, async (req, res, next) => {
   try {
     const { name, date, time, local } = req.body
 
@@ -39,7 +40,7 @@ router.post("/", async (req, res, next) => {
   }
 })
 
-router.patch("/:id", async (req, res, next) => {
+router.patch("/:id", isAdminMiddleware, async (req, res, next) => {
   try {
     const tournamentToUpdate = await Tournament.findByPk(req.params.id)
 
@@ -72,7 +73,7 @@ router.patch("/:id", async (req, res, next) => {
   }
 })
 
-router.delete("/:id", async (req, res, next) => {
+router.delete("/:id", isAdminMiddleware, async (req, res, next) => {
   try {
     const tournamentToDelete = await Tournament.findByPk(req.params.id)
 

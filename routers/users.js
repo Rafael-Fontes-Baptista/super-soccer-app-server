@@ -58,9 +58,9 @@ router.patch("/:id", async (req, res, next) => {
     } else {
       const { full_name, email, password, avatar_url } = req.body
       if (!full_name || !email || !password) {
-        return res
-          .status(400)
-          .send({ message: "A user must have a full name, email and password" })
+        return res.status(400).send({
+          message: "A user must have a full name, email and password",
+        })
       }
 
       await userToUpdate.update({ full_name, email, password, avatar_url })

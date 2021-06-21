@@ -1,8 +1,9 @@
 const express = require("express")
 const loggerMiddleWare = require("morgan")
 const corsMiddleWare = require("cors")
-const { PORT } = require("./config/constants")
 const authMiddleWare = require("./auth/middleware")
+const isAdminMiddleware = require("./auth/isAdmin")
+const { PORT } = require("./config/constants")
 const authRouter = require("./routers/auth")
 const teamsRouter = require("./routers/teams")
 const usersRouter = require("./routers/users")
@@ -24,9 +25,9 @@ if (process.env.DELAY) {
 }
 
 app.use("/", authRouter)
-app.use("/teams", teamsRouter)
-app.use("/users", usersRouter)
-app.use("/tournaments", tournamentsRouter)
+app.use("/teams", authMiddleWare, isAdminMiddleware, teamsRouter)
+app.use("/users", authMiddleWare, isAdminMiddleware, usersRouter)
+app.use("/tournaments", authMiddleWare, tournamentsRouter)
 
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`)
