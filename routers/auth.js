@@ -71,28 +71,40 @@ router.get("/me", authMiddleware, async (req, res) => {
 
 router.patch("/profile", authMiddleware, async (req, res) => {
   try {
-    const userToUpdate = await User.findByPk(req.user.id)
+    const user = await User.findByPk(req.user.id)
 
-    if (!userToUpdate) {
+    if (!user) {
       return res.status(404).send("user doesn't exist")
     }
 
     const { full_name, email, password, avatar_url } = req.body
 
-    if (!full_name || !email || !password) {
+    if (!full_name || !email) {
       return res.status(400).send({
         message: "A user must have a full name, email and password",
       })
     }
 
-    await userToUpdate.update({
-      full_name,
-      email,
-      password: bcrypt.hashSync(password, SALT_ROUNDS),
-      avatar_url,
-    })
+    console.log(req.body)
 
-    return res.status(200).send({ userToUpdate })
+    if (!password) {
+      await user.update({
+        full_name,
+        email,
+        avatar_url,
+      })
+    } else {
+      await user.update({
+        full_name,
+        email,
+        password: bcrypt.hashSync(password, SALT_ROUNDS),
+        avatar_url,
+      })
+    }
+
+    delete user.dataValues["password"] // don't send back the password hash
+
+    return res.status(200).send({ user })
   } catch (e) {
     next(e)
   }
