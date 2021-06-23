@@ -28,9 +28,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       avatar_url: {
         type: DataTypes.STRING,
-        allowNull: false,
-        defaultValue:
-          "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
       },
       stars: {
         type: DataTypes.INTEGER,
