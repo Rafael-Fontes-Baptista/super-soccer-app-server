@@ -40,6 +40,16 @@ router.post("/", isAdminMiddleware, async (req, res, next) => {
   }
 })
 
+router.get("/:id", async (req, res, next) => {
+  try {
+    const tournament = await Tournament.findByPk(req.params.id)
+
+    res.status(200).send({ message: "ok", tournament })
+  } catch (e) {
+    next(e)
+  }
+})
+
 router.patch("/:id", isAdminMiddleware, async (req, res, next) => {
   try {
     const tournamentToUpdate = await Tournament.findByPk(req.params.id)
