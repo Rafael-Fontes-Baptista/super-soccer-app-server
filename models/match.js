@@ -1,46 +1,47 @@
 "use strict"
 const { Model } = require("sequelize")
 module.exports = (sequelize, DataTypes) => {
-  class tournament extends Model {
+  class match extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      tournament.hasMany(models.match)
+      match.belongsTo(models.tournament)
     }
   }
-  tournament.init(
+  match.init(
     {
-      name: {
+      team_a: {
         type: DataTypes.STRING,
+      },
+      team_b: {
+        type: DataTypes.STRING,
+      },
+      goals_team_a: {
+        type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 0,
       },
-      date: {
-        type: DataTypes.STRING,
+      goals_team_b: {
+        type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 0,
       },
-      time: {
-        type: DataTypes.TIME,
-        allowNull: false,
-      },
-      local: {
-        type: DataTypes.STRING,
-      },
-      champion: {
-        type: DataTypes.STRING,
+      match_order: {
+        type: DataTypes.INTEGER,
       },
       status: {
-        type: DataTypes.STRING,
+        type: DataTypes.BOOLEAN,
         allowNull: false,
-        defaultValue: "open",
+        defaultValue: true,
       },
     },
     {
       sequelize,
-      modelName: "tournament",
+      modelName: "match",
     }
   )
-  return tournament
+  return match
 }
