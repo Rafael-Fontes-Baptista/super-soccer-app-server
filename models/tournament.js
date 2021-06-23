@@ -9,6 +9,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       tournament.hasMany(models.match)
+      tournament.belongsToMany(models.tournamentTeam, {
+        through: "tournamentTeamUsers",
+        foreignKey: "tournament_id",
+      })
+      tournament.belongsToMany(models.user, {
+        through: "tournamentTeamUsers",
+        foreignKey: "tournament_id",
+      })
     }
   }
   tournament.init(
