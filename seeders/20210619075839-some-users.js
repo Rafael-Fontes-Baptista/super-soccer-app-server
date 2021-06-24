@@ -36,7 +36,7 @@ module.exports = {
           avatar_url:
             "https://image.freepik.com/free-vector/young-man-avatar-character-vector-illustration-design_24877-18514.jpg",
           stars: 5,
-          isAdmin: true,
+          isAdmin: false,
           createdAt: new Date(),
           updatedAt: new Date(),
         },

@@ -3,6 +3,9 @@ const isAdminMiddleware = require("../auth/isAdmin")
 const Tournament = require("../models").tournament
 const tournamentUser = require("../models").tournamentUser
 const User = require("../models").user
+const Match = require("../models").match
+const TournamentTeam = require("../models").tournamentTeam
+const Team = require("../models").team
 
 const router = new Router()
 
@@ -10,6 +13,7 @@ router.get("/", async (req, res, next) => {
   try {
     const tournaments = await Tournament.findAll({
       order: [["date", "DESC"]],
+      include: [User],
     })
 
     res.status(200).send({ message: "ok", tournaments })
@@ -46,7 +50,7 @@ router.post("/", isAdminMiddleware, async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const tournament = await Tournament.findByPk(req.params.id, {
-      include: [User],
+      include: [User, Match, { model: TournamentTeam, include: [Team, User] }],
     })
 
     res.status(200).send({ message: "ok", tournament })
@@ -110,29 +114,16 @@ router.delete("/:id", isAdminMiddleware, async (req, res, next) => {
   }
 })
 
-router.get("/:id/players", async (req, res, next) => {
-  try {
-    const tournamentPlayers = await Tournament.findAll({
-      where: {
-        id: req.params.id,
-      },
-      include: [User],
-    })
-
-    res.status(200).send({ message: "ok", tournamentPlayers })
-  } catch (e) {
-    next(e)
-  }
-})
-
 router.post("/:id/players", async (req, res, next) => {
   try {
-    const newTournamentPlayer = await tournamentTeamUser.create({
-      tournament_id: req.params.id,
-      user_id: req.user.id,
+    const newTournamentPlayer = await tournamentUser.create({
+      tournamentId: parseInt(req.params.id),
+      userId: parseInt(req.user.id),
     })
 
-    res.status(200).send({ message: "ok", newTournamentPlayer })
+    console.log("tournamentId", req.params.id, "userId")
+
+    res.status(200).send({ message: "player registered" })
   } catch (e) {
     next(e)
   }
