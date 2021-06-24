@@ -9,13 +9,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       tournamentTeam.belongsTo(models.team)
-      tournamentTeam.belongsToMany(models.tournament, {
-        through: "tournamentTeamUsers",
-        foreignKey: "tournamentTeam_id",
-      })
+      tournamentTeam.belongsTo(models.tournament)
       tournamentTeam.belongsToMany(models.user, {
         through: "tournamentTeamUsers",
-        foreignKey: "tournamentTeam_id",
+        foreignKey: "tournamentTeamId",
       })
     }
   }

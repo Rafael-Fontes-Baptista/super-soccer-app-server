@@ -32,15 +32,6 @@ module.exports = {
         allowNull: false,
         defaultValue: true,
       },
-      // tournament_id: {
-      //   type: Sequelize.INTEGER,
-      //   references: {
-      //     model: "tournaments",
-      //     key: "id",
-      //   },
-      //   onUpdate: "CASCADE",
-      //   onDelete: "SET NULL",
-      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

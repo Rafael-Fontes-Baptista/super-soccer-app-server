@@ -1,6 +1,8 @@
 const { Router } = require("express")
 const isAdminMiddleware = require("../auth/isAdmin")
 const Tournament = require("../models").tournament
+const tournamentUser = require("../models").tournamentUser
+const User = require("../models").user
 
 const router = new Router()
 
@@ -19,6 +21,7 @@ router.get("/", async (req, res, next) => {
 router.post("/", isAdminMiddleware, async (req, res, next) => {
   try {
     const { name, date, time, local } = req.body
+    console.log(name, date, time, local)
 
     if (!name || !date || !time) {
       return res
@@ -42,7 +45,9 @@ router.post("/", isAdminMiddleware, async (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
   try {
-    const tournament = await Tournament.findByPk(req.params.id)
+    const tournament = await Tournament.findByPk(req.params.id, {
+      include: [User],
+    })
 
     res.status(200).send({ message: "ok", tournament })
   } catch (e) {
@@ -100,6 +105,50 @@ router.delete("/:id", isAdminMiddleware, async (req, res, next) => {
     await tournamentToDelete.destroy()
 
     return res.status(200).send("tournament deleted")
+  } catch (e) {
+    next(e)
+  }
+})
+
+router.get("/:id/players", async (req, res, next) => {
+  try {
+    const tournamentPlayers = await Tournament.findAll({
+      where: {
+        id: req.params.id,
+      },
+      include: [User],
+    })
+
+    res.status(200).send({ message: "ok", tournamentPlayers })
+  } catch (e) {
+    next(e)
+  }
+})
+
+router.post("/:id/players", async (req, res, next) => {
+  try {
+    const newTournamentPlayer = await tournamentTeamUser.create({
+      tournament_id: req.params.id,
+      user_id: req.user.id,
+    })
+
+    res.status(200).send({ message: "ok", newTournamentPlayer })
+  } catch (e) {
+    next(e)
+  }
+})
+
+router.delete("/:id/players", async (req, res, next) => {
+  try {
+    const playerToDelete = await tournamentTeamUser.findByPk(req.user.id, {
+      where: {
+        tournament_id: req.params.id,
+      },
+    })
+
+    await playerToDelete.destroy()
+
+    return res.status(200).send("player deleted on this tournament")
   } catch (e) {
     next(e)
   }

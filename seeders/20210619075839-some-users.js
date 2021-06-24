@@ -30,7 +30,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 1",
+          full_name: "Player Test A",
           email: "email1@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -41,7 +41,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 2",
+          full_name: "Player Test B",
           email: "email2@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -52,7 +52,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 3",
+          full_name: "Player Test C",
           email: "email3@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -63,7 +63,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 4",
+          full_name: "Player Test D",
           email: "email4@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -74,7 +74,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 5",
+          full_name: "Player Test E",
           email: "email5@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -85,7 +85,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 6",
+          full_name: "Player Test F",
           email: "email6@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -96,7 +96,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 7",
+          full_name: "Player Test G",
           email: "email7@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -107,7 +107,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 8",
+          full_name: "Player Test H",
           email: "email8@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -118,7 +118,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 9",
+          full_name: "Player Test I",
           email: "email9@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -129,7 +129,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 10",
+          full_name: "Player Test J",
           email: "email10@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -140,7 +140,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 11",
+          full_name: "Player Test L",
           email: "email11@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -151,7 +151,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 12",
+          full_name: "Player Test M",
           email: "email12@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -162,7 +162,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 13",
+          full_name: "Player Test N",
           email: "email13@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -173,7 +173,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 14",
+          full_name: "Player Test O",
           email: "email14@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -184,7 +184,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 15",
+          full_name: "Player Test P",
           email: "email15@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -195,7 +195,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 16",
+          full_name: "Player Test Q",
           email: "email16@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -206,7 +206,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 17",
+          full_name: "Player Test R",
           email: "email17@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -217,7 +217,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 18",
+          full_name: "Player Test S",
           email: "email18@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:
@@ -228,7 +228,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test 19",
+          full_name: "Player Test T",
           email: "email19@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatar_url:

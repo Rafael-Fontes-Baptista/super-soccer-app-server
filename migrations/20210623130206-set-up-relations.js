@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.addColumn("matches", "tournament_id", {
+    await queryInterface.addColumn("matches", "tournamentId", {
       type: Sequelize.INTEGER,
       references: {
         model: "tournaments",
@@ -12,7 +12,7 @@ module.exports = {
       onDelete: "SET NULL",
     })
 
-    await queryInterface.addColumn("tournamentTeams", "team_id", {
+    await queryInterface.addColumn("tournamentTeams", "teamId", {
       type: Sequelize.INTEGER,
       references: {
         model: "teams",
@@ -21,10 +21,21 @@ module.exports = {
       onUpdate: "CASCADE",
       onDelete: "SET NULL",
     })
+
+    await queryInterface.addColumn("tournamentTeams", "tournamentId", {
+      type: Sequelize.INTEGER,
+      references: {
+        model: "tournaments",
+        key: "id",
+      },
+      onUpdate: "CASCADE",
+      onDelete: "SET NULL",
+    })
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.removeColumn("matches", "tournament_id")
-    await queryInterface.removeColumn("tournamentTeams", "team_id")
+    await queryInterface.removeColumn("matches", "tournamentId")
+    await queryInterface.removeColumn("tournamentTeams", "teamId")
+    await queryInterface.removeColumn("tournamentTeams", "tournamentId")
   },
 }
