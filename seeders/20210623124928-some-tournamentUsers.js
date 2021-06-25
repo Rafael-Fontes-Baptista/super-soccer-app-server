@@ -245,6 +245,78 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          tournamentId: 3,
+          userId: 9,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          tournamentId: 3,
+          userId: 10,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          tournamentId: 3,
+          userId: 11,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          tournamentId: 3,
+          userId: 12,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          tournamentId: 3,
+          userId: 13,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          tournamentId: 3,
+          userId: 14,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          tournamentId: 3,
+          userId: 15,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          tournamentId: 3,
+          userId: 16,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          tournamentId: 3,
+          userId: 17,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          tournamentId: 3,
+          userId: 18,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          tournamentId: 3,
+          userId: 19,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          tournamentId: 3,
+          userId: 20,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     )
