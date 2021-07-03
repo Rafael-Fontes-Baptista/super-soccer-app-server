@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      full_name: {
+      fullName: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      avatar_url: {
+      avatarUrl: {
         type: Sequelize.STRING,
         allowNull: false,
         defaultValue:

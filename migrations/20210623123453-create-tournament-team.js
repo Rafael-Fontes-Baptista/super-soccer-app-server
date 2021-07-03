@@ -28,12 +28,12 @@ module.exports = {
         allowNull: false,
         defaultValue: 0,
       },
-      goals_taken: {
+      goalsAgainst: {
         type: Sequelize.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      goals_done: {
+      goalsFor: {
         type: Sequelize.INTEGER,
         allowNull: false,
         defaultValue: 0,

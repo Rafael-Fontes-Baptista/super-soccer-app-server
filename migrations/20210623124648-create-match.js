@@ -8,23 +8,23 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      team_a: {
+      teamA: {
         type: Sequelize.STRING,
       },
-      team_b: {
+      teamB: {
         type: Sequelize.STRING,
       },
-      goals_team_a: {
+      goalsTeamA: {
         type: Sequelize.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      goals_team_b: {
+      goalsTeamB: {
         type: Sequelize.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      match_order: {
+      matchOrder: {
         type: Sequelize.INTEGER,
       },
       status: {

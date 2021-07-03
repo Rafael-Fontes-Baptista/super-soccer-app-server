@@ -13,23 +13,23 @@ module.exports = (sequelize, DataTypes) => {
   }
   match.init(
     {
-      team_a: {
+      teamA: {
         type: DataTypes.STRING,
       },
-      team_b: {
+      teamB: {
         type: DataTypes.STRING,
       },
-      goals_team_a: {
+      goalsTeamA: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      goals_team_b: {
+      goalsTeamB: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      match_order: {
+      matchOrder: {
         type: DataTypes.INTEGER,
       },
       status: {

@@ -38,12 +38,12 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         defaultValue: 0,
       },
-      goals_taken: {
+      goalsAgainst: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      goals_done: {
+      goalsFor: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,

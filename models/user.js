@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   user.init(
     {
-      full_name: {
+      fullName: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      avatar_url: {
+      avatarUrl: {
         type: DataTypes.STRING,
       },
       stars: {

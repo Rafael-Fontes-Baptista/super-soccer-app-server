@@ -35,9 +35,9 @@ router.post("/login", async (req, res, next) => {
 })
 
 router.post("/signup", async (req, res) => {
-  const { email, password, full_name } = req.body
+  const { email, password, fullName } = req.body
 
-  if (!email || !password || !full_name) {
+  if (!email || !password || !fullName) {
     return res.status(400).send("Please provide an email, password and a name")
   }
 
@@ -45,7 +45,7 @@ router.post("/signup", async (req, res) => {
     const newUser = await User.create({
       email,
       password: bcrypt.hashSync(password, SALT_ROUNDS),
-      full_name,
+      fullName,
     })
 
     delete newUser.dataValues["password"] // don't send back the password hash
@@ -77,9 +77,9 @@ router.patch("/profile", authMiddleware, async (req, res) => {
       return res.status(404).send("user doesn't exist")
     }
 
-    const { full_name, email, password, avatar_url } = req.body
+    const { fullName, email, password, avatarUrl } = req.body
 
-    if (!full_name || !email) {
+    if (!fullName || !email) {
       return res.status(400).send({
         message: "A user must have a full name, email and password",
       })
@@ -89,16 +89,16 @@ router.patch("/profile", authMiddleware, async (req, res) => {
 
     if (!password) {
       await user.update({
-        full_name,
+        fullName,
         email,
-        avatar_url,
+        avatarUrl,
       })
     } else {
       await user.update({
-        full_name,
+        fullName,
         email,
         password: bcrypt.hashSync(password, SALT_ROUNDS),
-        avatar_url,
+        avatarUrl,
       })
     }
 

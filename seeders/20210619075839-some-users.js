@@ -8,10 +8,10 @@ module.exports = {
       "users",
       [
         {
-          full_name: "testuser",
+          fullName: "testuser",
           email: "user@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 3,
           isAdmin: false,
@@ -19,10 +19,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "testadmin",
+          fullName: "testadmin",
           email: "admin@test.com",
           password: bcrypt.hashSync("qwerty", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/free-vector/businessman-avatar-character_24877-18284.jpg",
           stars: 3,
           isAdmin: true,
@@ -30,10 +30,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test A",
+          fullName: "Player Test A",
           email: "email1@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/free-vector/young-man-avatar-character-vector-illustration-design_24877-18514.jpg",
           stars: 5,
           isAdmin: false,
@@ -41,10 +41,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test B",
+          fullName: "Player Test B",
           email: "email2@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/free-vector/young-man-avatar-character-vector-illustration-design_24877-18517.jpg",
           stars: 4,
           isAdmin: false,
@@ -52,10 +52,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test C",
+          fullName: "Player Test C",
           email: "email3@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vector-gratis/diseno-ilustracion-vector-personaje-avatar-hombre-joven_24877-18531.jpg",
           stars: 1,
           isAdmin: false,
@@ -63,10 +63,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test D",
+          fullName: "Player Test D",
           email: "email4@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/mulher-avatar-feminino-personagem-vector-ilustracao-design_24877-23104.jpg",
           stars: 2,
           isAdmin: false,
@@ -74,10 +74,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test E",
+          fullName: "Player Test E",
           email: "email5@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/jovem-mulher-avatar-personagem-vector-ilustracao-design_24877-18520.jpg",
           stars: 3,
           isAdmin: false,
@@ -85,10 +85,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test F",
+          fullName: "Player Test F",
           email: "email6@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/mulher-avatar-feminino-personagem-vector-ilustracao-design_24877-23102.jpg",
           stars: 3,
           isAdmin: false,
@@ -96,10 +96,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test G",
+          fullName: "Player Test G",
           email: "email7@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/free-vector/young-man-avatar-character-vector-illustration-design_24877-18550.jpg",
           stars: 4,
           isAdmin: false,
@@ -107,10 +107,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test H",
+          fullName: "Player Test H",
           email: "email8@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 2,
           isAdmin: false,
@@ -118,10 +118,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test I",
+          fullName: "Player Test I",
           email: "email9@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 3,
           isAdmin: false,
@@ -129,10 +129,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test J",
+          fullName: "Player Test J",
           email: "email10@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 3,
           isAdmin: false,
@@ -140,10 +140,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test L",
+          fullName: "Player Test L",
           email: "email11@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 1,
           isAdmin: false,
@@ -151,10 +151,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test M",
+          fullName: "Player Test M",
           email: "email12@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 3,
           isAdmin: false,
@@ -162,10 +162,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test N",
+          fullName: "Player Test N",
           email: "email13@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 4,
           isAdmin: false,
@@ -173,10 +173,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test O",
+          fullName: "Player Test O",
           email: "email14@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 3,
           isAdmin: false,
@@ -184,10 +184,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test P",
+          fullName: "Player Test P",
           email: "email15@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 5,
           isAdmin: false,
@@ -195,10 +195,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test Q",
+          fullName: "Player Test Q",
           email: "email16@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 5,
           isAdmin: false,
@@ -206,10 +206,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test R",
+          fullName: "Player Test R",
           email: "email17@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 3,
           isAdmin: false,
@@ -217,10 +217,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test S",
+          fullName: "Player Test S",
           email: "email18@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 3,
           isAdmin: false,
@@ -228,10 +228,10 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          full_name: "Player Test T",
+          fullName: "Player Test T",
           email: "email19@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
-          avatar_url:
+          avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 2,
           isAdmin: false,
