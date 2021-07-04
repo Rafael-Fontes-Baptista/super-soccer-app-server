@@ -153,12 +153,16 @@ router.delete("/:id/players", async (req, res, next) => {
   }
 })
 
-router.post("/:id/details", async (req, res, next) => {
+router.post("/:id/details", isAdminMiddleware, async (req, res, next) => {
   try {
-    const teamsId = req.body.teamsId
     const tournamentId = req.params.id
 
     // creating teams
+    const numOfTeams = req.body.numOfTeams
+
+    const allTeams = await Team.findAll()
+    const teamsId = allTeams.map((t) => t.id).splice(0, numOfTeams)
+
     for (i = 0; i < teamsId.length; i++) {
       await TournamentTeam.create({
         tournamentId,
@@ -226,76 +230,80 @@ router.post("/:id/details", async (req, res, next) => {
   }
 })
 
-router.patch("/:id/matches/:matchId", async (req, res, next) => {
-  try {
-    // STEP 0: Holding request data
-    const tournamentId = parseInt(req.params.id)
-    const matchId = parseInt(req.params.matchId)
-    const { teamAId, teamAScore, teamBId, teamBScore } = req.body
-    const matchResult =
-      teamAScore === teamBScore ? "draw" : teamAScore > teamBScore ? "A" : "B"
+router.patch(
+  "/:id/matches/:matchId",
+  isAdminMiddleware,
+  async (req, res, next) => {
+    try {
+      // STEP 0: Holding request data
+      const tournamentId = parseInt(req.params.id)
+      const matchId = parseInt(req.params.matchId)
+      const { teamAId, teamAScore, teamBId, teamBScore } = req.body
+      const matchResult =
+        teamAScore === teamBScore ? "draw" : teamAScore > teamBScore ? "A" : "B"
 
-    // STEP 1: Update match's result
-    const currentMatch = await Match.findByPk(matchId)
-    currentMatch.status = false
-    currentMatch.goalsTeamA = teamAScore
-    currentMatch.goalsTeamB = teamBScore
-    await currentMatch.save()
+      // STEP 1: Update match's result
+      const currentMatch = await Match.findByPk(matchId)
+      currentMatch.status = false
+      currentMatch.goalsTeamA = teamAScore
+      currentMatch.goalsTeamB = teamBScore
+      await currentMatch.save()
 
-    // STEP 2: Update team A result
-    const currentTeamA = await TournamentTeam.findByPk(teamAId)
-    currentTeamA.goalsFor += teamAScore
-    currentTeamA.goalsAgainst += teamBScore
-    currentTeamA.score +=
-      matchResult === "draw" ? 1 : matchResult === "A" ? 3 : 0
-    if (matchResult === "A") currentTeamA.wins += 1
-    if (matchResult === "B") currentTeamA.defeats += 1
-    if (matchResult === "draw") currentTeamA.draws += 1
-    await currentTeamA.save()
+      // STEP 2: Update team A result
+      const currentTeamA = await TournamentTeam.findByPk(teamAId)
+      currentTeamA.goalsFor += teamAScore
+      currentTeamA.goalsAgainst += teamBScore
+      currentTeamA.score +=
+        matchResult === "draw" ? 1 : matchResult === "A" ? 3 : 0
+      if (matchResult === "A") currentTeamA.wins += 1
+      if (matchResult === "B") currentTeamA.defeats += 1
+      if (matchResult === "draw") currentTeamA.draws += 1
+      await currentTeamA.save()
 
-    // STEP 3: Update team B result
-    const currentTeamB = await TournamentTeam.findByPk(teamBId)
-    currentTeamB.goalsFor += teamBScore
-    currentTeamB.goalsAgainst += teamAScore
-    currentTeamB.score +=
-      matchResult === "draw" ? 1 : matchResult === "B" ? 3 : 0
-    if (matchResult === "B") currentTeamB.wins += 1
-    if (matchResult === "A") currentTeamB.defeats += 1
-    if (matchResult === "draw") currentTeamB.draws += 1
-    await currentTeamB.save()
+      // STEP 3: Update team B result
+      const currentTeamB = await TournamentTeam.findByPk(teamBId)
+      currentTeamB.goalsFor += teamBScore
+      currentTeamB.goalsAgainst += teamAScore
+      currentTeamB.score +=
+        matchResult === "draw" ? 1 : matchResult === "B" ? 3 : 0
+      if (matchResult === "B") currentTeamB.wins += 1
+      if (matchResult === "A") currentTeamB.defeats += 1
+      if (matchResult === "draw") currentTeamB.draws += 1
+      await currentTeamB.save()
 
-    // STEP 4: Finish the tournament if finished all matches
-    const allMatches = await Match.findAll({
-      where: { tournamentId, status: true },
-    })
-    if (allMatches.length === 0) {
-      // select the champion
-      const teams = await TournamentTeam.findAll({
-        where: { tournamentId },
-        include: [Team],
+      // STEP 4: Finish the tournament if finished all matches
+      const allMatches = await Match.findAll({
+        where: { tournamentId, status: true },
       })
-      const ranking = teams.sort((a, b) => {
-        const scoreComparison = b.score - a.score
-        if (!scoreComparison) {
-          return b.goalsFor - b.goalsAgainst - (a.goalsFor - a.goalsAgainst)
-        } else {
-          return scoreComparison
-        }
-      })
+      if (allMatches.length === 0) {
+        // select the champion
+        const teams = await TournamentTeam.findAll({
+          where: { tournamentId },
+          include: [Team],
+        })
+        const ranking = teams.sort((a, b) => {
+          const scoreComparison = b.score - a.score
+          if (!scoreComparison) {
+            return b.goalsFor - b.goalsAgainst - (a.goalsFor - a.goalsAgainst)
+          } else {
+            return scoreComparison
+          }
+        })
 
-      const champion = ranking.shift()
+        const champion = ranking.shift()
 
-      // updating the tournament
-      const tournament = await Tournament.findByPk(tournamentId)
-      tournament.status = "finished"
-      tournament.champion = champion.team.name
-      await tournament.save()
+        // updating the tournament
+        const tournament = await Tournament.findByPk(tournamentId)
+        tournament.status = "finished"
+        tournament.champion = champion.team.name
+        await tournament.save()
+      }
+
+      res.status(200).send({ message: "match finished!" })
+    } catch (e) {
+      next(e)
     }
-
-    res.status(200).send({ message: "match finished!" })
-  } catch (e) {
-    next(e)
   }
-})
+)
 
 module.exports = router

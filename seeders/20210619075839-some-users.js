@@ -30,7 +30,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test A",
+          fullName: "Lionel Messi",
           email: "email1@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -41,7 +41,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test B",
+          fullName: "Robert Lewandowski",
           email: "email2@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -52,7 +52,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test C",
+          fullName: "Toni Kroos",
           email: "email3@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -63,7 +63,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test D",
+          fullName: "André Silva",
           email: "email4@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -74,7 +74,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test E",
+          fullName: "Karim Benzema",
           email: "email5@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -85,7 +85,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test F",
+          fullName: "Neymar Jr.",
           email: "email6@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -96,7 +96,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test G",
+          fullName: "Cristiano Ronaldo",
           email: "email7@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -107,7 +107,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test H",
+          fullName: "Jordi Alba",
           email: "email8@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -118,7 +118,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test I",
+          fullName: "Romelu Lukaku",
           email: "email9@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -129,7 +129,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test J",
+          fullName: "Andreas Christensen",
           email: "email10@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -140,7 +140,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test L",
+          fullName: "Jadon Sancho",
           email: "email11@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -151,7 +151,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test M",
+          fullName: "João Cancelo",
           email: "email12@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -162,7 +162,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test N",
+          fullName: "Memphis Depay",
           email: "email13@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -173,7 +173,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test O",
+          fullName: "Kevin De Bruyne",
           email: "email14@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -184,7 +184,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test P",
+          fullName: "Jan Oblak",
           email: "email15@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -195,7 +195,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test Q",
+          fullName: "Thibaut Courtois",
           email: "email16@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -206,7 +206,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test R",
+          fullName: "Éder Militão",
           email: "email17@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -217,7 +217,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test S",
+          fullName: "Edmond Tapsoba",
           email: "email18@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
@@ -228,7 +228,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          fullName: "Player Test T",
+          fullName: "John Stones",
           email: "email19@test.com",
           password: bcrypt.hashSync("test1234", SALT_ROUNDS),
           avatarUrl:
