@@ -14,7 +14,7 @@
     "sequelize-cli": "^6.2.0"
   },
   "scripts": {
-    "start": "node .",
+    "start": "node index.js",
     "dev": "env DELAY=1000 npx nodemon .",
     "initdev": "npm run migrate && npm run seed",
     "migrate": "npx sequelize-cli db:migrate",
