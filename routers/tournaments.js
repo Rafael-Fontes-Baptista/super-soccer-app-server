@@ -26,7 +26,6 @@ router.get("/", async (req, res, next) => {
 router.post("/", isAdminMiddleware, async (req, res, next) => {
   try {
     const { name, date, time, local } = req.body
-    console.log(name, date, time, local)
 
     if (!name || !date || !time) {
       return res
@@ -54,6 +53,10 @@ router.get("/:id", async (req, res, next) => {
       include: [User, Match, { model: TournamentTeam, include: [Team, User] }],
     })
 
+    tournament.users.map((user) => delete user.dataValues["password"])
+    tournament.tournamentTeams.map((tt) =>
+      tt.users.map((user) => delete user.dataValues["password"])
+    )
     res.status(200).send({ message: "ok", tournament })
   } catch (e) {
     next(e)
@@ -271,7 +274,7 @@ router.patch(
       if (matchResult === "draw") currentTeamB.draws += 1
       await currentTeamB.save()
 
-      // STEP 4: Finish the tournament if finished all matches
+      // STEP 4: Finish the tournament if all matches finished
       const allMatches = await Match.findAll({
         where: { tournamentId, status: true },
       })

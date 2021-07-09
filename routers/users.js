@@ -11,6 +11,7 @@ router.get("/", async (req, res, next) => {
       order: [["fullName", "ASC"]],
     })
 
+    users.map((user) => delete user.dataValues["password"])
     res.status(200).send({ message: "ok", users })
   } catch (e) {
     next(e)
