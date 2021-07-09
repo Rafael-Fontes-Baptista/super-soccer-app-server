@@ -1,46 +1,42 @@
 "use strict"
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("users", {
+    await queryInterface.createTable("tournamentTeams", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      fullName: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      email: {
-        type: Sequelize.STRING,
-        unique: true,
-        allowNull: false,
-      },
-      password: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      avatarUrl: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        defaultValue:
-          "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
-      },
-      stars: {
+      score: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        defaultValue: 3,
+        defaultValue: 0,
       },
-      status: {
-        type: Sequelize.STRING,
+      wins: {
+        type: Sequelize.INTEGER,
         allowNull: false,
-        defaultValue: true,
+        defaultValue: 0,
       },
-      isAdmin: {
-        type: Sequelize.BOOLEAN,
+      defeats: {
+        type: Sequelize.INTEGER,
         allowNull: false,
-        defaultValue: false,
+        defaultValue: 0,
+      },
+      draws: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+      },
+      goalsAgainst: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+      },
+      goalsFor: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
       },
       createdAt: {
         allowNull: false,
@@ -53,6 +49,6 @@ module.exports = {
     })
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("users")
+    await queryInterface.dropTable("tournamentTeams")
   },
 }

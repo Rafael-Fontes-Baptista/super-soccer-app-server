@@ -33,6 +33,13 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          name: "Orange",
+          abrev: "ORA",
+          color: "#FFA500",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     )

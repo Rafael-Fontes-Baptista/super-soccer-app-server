@@ -8,12 +8,19 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      user.belongsToMany(models.tournament, {
+        through: "tournamentUsers",
+        foreignKey: "userId",
+      })
+      user.belongsToMany(models.tournamentTeam, {
+        through: "tournamentTeamUsers",
+        foreignKey: "userId",
+      })
     }
   }
   user.init(
     {
-      full_name: {
+      fullName: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -26,11 +33,8 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      avatar_url: {
+      avatarUrl: {
         type: DataTypes.STRING,
-        allowNull: false,
-        defaultValue:
-          "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
       },
       stars: {
         type: DataTypes.INTEGER,

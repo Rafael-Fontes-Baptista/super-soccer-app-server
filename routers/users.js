@@ -8,9 +8,10 @@ const router = new Router()
 router.get("/", async (req, res, next) => {
   try {
     const users = await User.findAll({
-      order: [["full_name", "ASC"]],
+      order: [["fullName", "ASC"]],
     })
 
+    users.map((user) => delete user.dataValues["password"])
     res.status(200).send({ message: "ok", users })
   } catch (e) {
     next(e)
@@ -19,9 +20,9 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
-    const { full_name, email, password } = req.body
+    const { fullName, email, password } = req.body
 
-    if (!full_name || !email || !password) {
+    if (!fullName || !email || !password) {
       return res
         .status(400)
         .send({ message: "A user must have a full name, email and password" })
@@ -29,7 +30,7 @@ router.post("/", async (req, res, next) => {
     const newUser = await User.create({
       email,
       password: bcrypt.hashSync(password, SALT_ROUNDS),
-      full_name,
+      fullName,
     })
 
     return res.status(201).send({ message: "user created", newUser })

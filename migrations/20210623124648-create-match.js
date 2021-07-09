@@ -1,46 +1,36 @@
 "use strict"
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("users", {
+    await queryInterface.createTable("matches", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      fullName: {
+      teamA: {
         type: Sequelize.STRING,
-        allowNull: false,
       },
-      email: {
+      teamB: {
         type: Sequelize.STRING,
-        unique: true,
-        allowNull: false,
       },
-      password: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      avatarUrl: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        defaultValue:
-          "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
-      },
-      stars: {
+      goalsTeamA: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        defaultValue: 3,
+        defaultValue: 0,
+      },
+      goalsTeamB: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+      },
+      matchOrder: {
+        type: Sequelize.INTEGER,
       },
       status: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        defaultValue: true,
-      },
-      isAdmin: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
-        defaultValue: false,
+        defaultValue: true,
       },
       createdAt: {
         allowNull: false,
@@ -53,6 +43,6 @@ module.exports = {
     })
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("users")
+    await queryInterface.dropTable("matches")
   },
 }
