@@ -10,7 +10,7 @@ module.exports = {
         {
           fullName: "testuser",
           email: "user@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 3,
@@ -21,7 +21,7 @@ module.exports = {
         {
           fullName: "testadmin",
           email: "admin@test.com",
-          password: bcrypt.hashSync("qwerty", SALT_ROUNDS),
+          password: "qwerty",
           avatarUrl:
             "https://image.freepik.com/free-vector/businessman-avatar-character_24877-18284.jpg",
           stars: 3,
@@ -32,7 +32,7 @@ module.exports = {
         {
           fullName: "Lionel Messi",
           email: "email1@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/free-vector/young-man-avatar-character-vector-illustration-design_24877-18514.jpg",
           stars: 5,
@@ -43,7 +43,7 @@ module.exports = {
         {
           fullName: "Robert Lewandowski",
           email: "email2@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/free-vector/young-man-avatar-character-vector-illustration-design_24877-18517.jpg",
           stars: 4,
@@ -54,7 +54,7 @@ module.exports = {
         {
           fullName: "Toni Kroos",
           email: "email3@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vector-gratis/diseno-ilustracion-vector-personaje-avatar-hombre-joven_24877-18531.jpg",
           stars: 1,
@@ -65,7 +65,7 @@ module.exports = {
         {
           fullName: "André Silva",
           email: "email4@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/mulher-avatar-feminino-personagem-vector-ilustracao-design_24877-23104.jpg",
           stars: 2,
@@ -76,7 +76,7 @@ module.exports = {
         {
           fullName: "Karim Benzema",
           email: "email5@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/jovem-mulher-avatar-personagem-vector-ilustracao-design_24877-18520.jpg",
           stars: 3,
@@ -87,7 +87,7 @@ module.exports = {
         {
           fullName: "Neymar Jr.",
           email: "email6@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/mulher-avatar-feminino-personagem-vector-ilustracao-design_24877-23102.jpg",
           stars: 3,
@@ -98,7 +98,7 @@ module.exports = {
         {
           fullName: "Cristiano Ronaldo",
           email: "email7@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/free-vector/young-man-avatar-character-vector-illustration-design_24877-18550.jpg",
           stars: 4,
@@ -109,7 +109,7 @@ module.exports = {
         {
           fullName: "Jordi Alba",
           email: "email8@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 2,
@@ -120,7 +120,7 @@ module.exports = {
         {
           fullName: "Romelu Lukaku",
           email: "email9@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 3,
@@ -131,7 +131,7 @@ module.exports = {
         {
           fullName: "Andreas Christensen",
           email: "email10@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 3,
@@ -142,7 +142,7 @@ module.exports = {
         {
           fullName: "Jadon Sancho",
           email: "email11@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 1,
@@ -153,7 +153,7 @@ module.exports = {
         {
           fullName: "João Cancelo",
           email: "email12@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 3,
@@ -164,7 +164,7 @@ module.exports = {
         {
           fullName: "Memphis Depay",
           email: "email13@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 4,
@@ -175,7 +175,7 @@ module.exports = {
         {
           fullName: "Kevin De Bruyne",
           email: "email14@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 3,
@@ -186,7 +186,7 @@ module.exports = {
         {
           fullName: "Jan Oblak",
           email: "email15@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 5,
@@ -197,7 +197,7 @@ module.exports = {
         {
           fullName: "Thibaut Courtois",
           email: "email16@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 5,
@@ -208,7 +208,7 @@ module.exports = {
         {
           fullName: "Éder Militão",
           email: "email17@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 3,
@@ -219,7 +219,7 @@ module.exports = {
         {
           fullName: "Edmond Tapsoba",
           email: "email18@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 3,
@@ -230,7 +230,7 @@ module.exports = {
         {
           fullName: "John Stones",
           email: "email19@test.com",
-          password: bcrypt.hashSync("test1234", SALT_ROUNDS),
+          password: "test1234",
           avatarUrl:
             "https://image.freepik.com/vetores-gratis/personagem-de-avatar-jovem_24877-9475.jpg",
           stars: 2,
